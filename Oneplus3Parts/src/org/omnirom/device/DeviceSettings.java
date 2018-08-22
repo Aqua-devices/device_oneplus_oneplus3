@@ -110,7 +110,6 @@ public class DeviceSettings extends PreferenceActivity implements
         mSRGBModeSwitch.setEnabled(SRGBModeSwitch.isSupported());
         mSRGBModeSwitch.setChecked(SRGBModeSwitch.isCurrentlyEnabled(this));
         mSRGBModeSwitch.setOnPreferenceChangeListener(new SRGBModeSwitch());
-
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this));
@@ -187,7 +186,7 @@ public class DeviceSettings extends PreferenceActivity implements
 
     private int getSliderAction(int position) {
         String value = Settings.System.getString(getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         final String defaultValue = SLIDER_DEFAULT_VALUE;
 
         if (value == null) {
@@ -205,7 +204,7 @@ public class DeviceSettings extends PreferenceActivity implements
 
     private void setSliderAction(int position, int action) {
         String value = Settings.System.getString(getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         final String defaultValue = SLIDER_DEFAULT_VALUE;
 
         if (value == null) {
@@ -218,7 +217,7 @@ public class DeviceSettings extends PreferenceActivity implements
             parts[position] = String.valueOf(action);
             String newValue = TextUtils.join(",", parts);
             Settings.System.putString(getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING, newValue);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING, newValue);
         } catch (Exception e) {
         }
     }
