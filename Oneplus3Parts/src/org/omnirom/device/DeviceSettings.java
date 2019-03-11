@@ -59,7 +59,7 @@ public class DeviceSettings extends PreferenceActivity implements
     final String KEY_DEVICE_DOZE = "device_doze";
     final String KEY_DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
-    public static final String SLIDER_DEFAULT_VALUE = "4,2,0";
+    public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
 
     private VibratorStrengthPreference mVibratorStrength;
     private ListPreference mSliderModeTop;
@@ -124,11 +124,6 @@ public class DeviceSettings extends PreferenceActivity implements
         } else {
             PreferenceCategory graphicsCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_GRAPHICS);
             graphicsCategory.removePreference(mDCIModeSwitch);
-        }
-
-        if (!isAppInstalled(KEY_DEVICE_DOZE_PACKAGE_NAME)) {
-            PreferenceCategory displayCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_DISPLAY);
-            displayCategory.removePreference(findPreference(KEY_DEVICE_DOZE));
         }
     }
 

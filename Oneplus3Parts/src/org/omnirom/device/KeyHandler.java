@@ -78,9 +78,9 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_UP_SWIPE_SCANCODE = 66;
 
     private static final int KEY_DOUBLE_TAP = 143;
-    private static final int KEY_SLIDER_TOP = 601;
-    private static final int KEY_SLIDER_CENTER = 602;
-    private static final int KEY_SLIDER_BOTTOM = 603;
+    private static final int KEY_SLIDER_TOP = 600;
+    private static final int KEY_SLIDER_CENTER = 601;
+    private static final int KEY_SLIDER_BOTTOM = 602;
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
@@ -391,16 +391,17 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private void doHandleSliderAction(int position) {
         int action = getSliderAction(position);
-        if ( action == 0) {
+        if (action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
         } else if (action == 2) {
+            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
         }
-    }
+    }    
 
     private Intent createIntent(String value) {
         ComponentName componentName = ComponentName.unflattenFromString(value);
