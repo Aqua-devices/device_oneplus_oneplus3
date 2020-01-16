@@ -37,10 +37,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.android.internal.util.aquarios.AppHelper;
-import com.android.internal.util.aquarios.ActionConstants;
-import com.android.internal.util.aquarios.DeviceUtils;
-import com.android.internal.util.aquarios.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.aquarios.support.helpers.AppHelper;
+import com.aquarios.support.utils.ActionConstants;
+import com.aquarios.support.utils.DeviceUtils;
+import com.aquarios.support.utils.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.slim.device.KernelControl;
 import com.slim.device.R;
