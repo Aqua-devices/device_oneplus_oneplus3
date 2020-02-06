@@ -259,6 +259,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OneplusDoze
 
+# Hardware navigation key handler
+PRODUCT_PACKAGES += \
+    HwKeyHandler
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
